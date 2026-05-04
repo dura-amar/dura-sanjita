@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,8 +7,14 @@
 
     <!-- Tailwind & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       body {
@@ -20,125 +26,324 @@
       .signature {
         font-family: "Great Vibes", cursive;
       }
-
-      /* Hide scrollbar for clean look but keep functionality */
-      ::-webkit-scrollbar { width: 5px; }
-      ::-webkit-scrollbar-track { background: #000; }
-      ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-
-      .fade-in { animation: fadeIn 1.5s ease-in; }
-      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 10px;
+      }
+      .fade-in {
+        animation: fadeIn 1.5s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
 
   <body class="bg-black">
-    <!-- VERTICAL SOCIAL SIDEBAR: Bottom on Mobile, Left on Desktop -->
-   <aside class="fixed bottom-0 left-0 w-full h-16 lg:h-full lg:w-20 flex lg:flex-col justify-center items-center z-50 bg-black/90 backdrop-blur-md border-t lg:border-t-0 lg:border-r border-zinc-800">
-  
-  <!-- Icon Container: Added lg:mb-20 to push icons away from the bottom text on desktop -->
-  <div class="flex lg:flex-col gap-8 md:gap-10 text-xl text-gray-400 lg:mb-24">
-    <a href="https://www.facebook.com/sanjitadura26" target="_blank" class="hover:text-blue-500 transition-transform hover:scale-125">
-      <i class="fa-brands fa-facebook"></i>
-    </a>
-    <a href="https://www.tiktok.com/@sanjita_dura" target="_blank" class="hover:text-pink-500 transition-transform hover:scale-125">
-      <i class="fa-brands fa-tiktok"></i>
-    </a>
-    <a href="https://www.youtube.com/@sanjitaduraofficial" target="_blank" class="hover:text-red-600 transition-transform hover:scale-125">
-      <i class="fa-brands fa-youtube"></i>
-    </a>
-    <a href="https://www.instagram.com/kanxi_dura2" target="_blank" class="hover:text-pink-600 transition-transform hover:scale-125">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </div>
-
-  <!-- Vertical Text Label: Adjusted bottom-6 to sit lower on the screen -->
-  <div class="hidden lg:block absolute bottom-6 rotate-180 [writing-mode:vertical-lr] text-[10px] tracking-[0.3em] uppercase text-gray-500">
-    Follow the Journey
-  </div>
-
-</aside>
+    <!-- VERTICAL SOCIAL SIDEBAR -->
+    <aside
+      class="fixed bottom-0 left-0 w-full h-16 lg:h-full lg:w-20 flex lg:flex-col justify-center items-center z-50 bg-black/90 backdrop-blur-md border-t lg:border-t-0 lg:border-r border-zinc-800"
+    >
+      <div
+        class="flex lg:flex-col gap-8 md:gap-10 text-xl text-gray-400 lg:mb-24"
+      >
+        <a
+          href="https://www.facebook.com/sanjitadura26"
+          target="_blank"
+          class="hover:text-blue-500 transition-transform hover:scale-125"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a
+          href="https://www.tiktok.com/@sanjita_dura"
+          target="_blank"
+          class="hover:text-pink-500 transition-transform hover:scale-125"
+          ><i class="fa-brands fa-tiktok"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/@sanjitaduraofficial"
+          target="_blank"
+          class="hover:text-red-600 transition-transform hover:scale-125"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/kanxi_dura2"
+          target="_blank"
+          class="hover:text-pink-600 transition-transform hover:scale-125"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </div>
+      <div
+        class="hidden lg:block absolute bottom-6 rotate-180 [writing-mode:vertical-lr] text-[10px] tracking-[0.3em] uppercase text-gray-500"
+      >
+        Follow the Journey
+      </div>
+    </aside>
 
     <!-- MAIN CONTENT WRAPPER -->
     <main class="lg:ml-20 mb-16 lg:mb-0">
-      
       <!-- HERO & GALLERY SPLIT SECTION -->
       <section class="flex flex-col lg:flex-row min-h-screen">
-        
-        <!-- LEFT: INTRO TEXT (Sticky on Desktop) -->
-        <div class="w-full lg:w-1/2 h-auto lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center p-8 md:p-16 lg:p-20 z-10 bg-black">
+        <!-- LEFT: INTRO TEXT -->
+        <div
+          class="w-full lg:w-1/2 h-auto lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center p-8 md:p-16 lg:p-20 z-10 bg-black"
+        >
           <div class="fade-in">
             <h1 class="leading-none">
-              <span class="signature text-7xl md:text-8xl lg:text-9xl text-gray-100">Sanjita</span><br />
-              <span class="tracking-[0.4em] text-xl md:text-3xl font-light">DURA</span>
+              <span
+                class="signature text-7xl md:text-8xl lg:text-9xl text-gray-100"
+                >Sanjita</span
+              ><br />
+              <span class="tracking-[0.4em] text-xl md:text-3xl font-light"
+                >DURA</span
+              >
             </h1>
-            <p class="text-gray-400 mt-6 max-w-md italic border-l-2 border-zinc-700 pl-4 text-sm md:text-base">
-              Singing with honesty, rooted in culture. Exploring the depths of folk and contemporary melodies.
+            <p
+              class="text-gray-400 mt-6 max-w-md italic border-l-2 border-zinc-700 pl-4 text-sm md:text-base"
+            >
+              Singing with honesty, rooted in culture. Exploring the depths of
+              folk and contemporary melodies.
             </p>
-            
-            <nav class="mt-8 lg:mt-12 flex flex-col gap-4 text-xs md:text-sm tracking-widest uppercase font-semibold">
-              <a href="#gallery" class="text-zinc-500 hover:text-white transition">01. Gallery</a>
-              <a href="#videos" class="text-zinc-500 hover:text-white transition">02. Videos</a>
+            <nav
+              class="mt-8 lg:mt-12 flex flex-col gap-4 text-xs md:text-sm tracking-widest uppercase font-semibold"
+            >
+              <a
+                href="#gallery"
+                class="text-zinc-500 hover:text-white transition"
+                >01. Gallery</a
+              >
+              <a
+                href="#videos"
+                class="text-zinc-500 hover:text-white transition"
+                >02. Videos</a
+              >
+              <a
+                href="#podcasts"
+                class="text-zinc-500 hover:text-white transition"
+                >03. Podcasts & Interviews</a
+              >
             </nav>
           </div>
         </div>
 
-        <!-- RIGHT: SCROLLING GALLERY (2-Columns/Rows on Mobile) -->
-        <div id="gallery" class="w-full lg:w-1/2 p-2 md:p-8 grid grid-cols-2 gap-2 md:gap-4 lg:gap-6 bg-zinc-950/30">
-          
+        <!-- RIGHT: SCROLLING GALLERY -->
+        <div
+          id="gallery"
+          class="w-full lg:w-1/2 p-2 md:p-8 grid grid-cols-2 gap-2 md:gap-4 lg:gap-6 bg-zinc-950/30"
+        >
           <div class="overflow-hidden bg-zinc-900 aspect-[3/4]">
-            <img src="photos/sanjita7.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Sanjita Dura Portrait" />
+            <img
+              src="photos/sanjita7.png"
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+              alt="Sanjita Dura"
+            />
           </div>
-
           <div class="overflow-hidden bg-zinc-900 aspect-[3/4] mt-4 md:mt-12">
-            <img src="photos/sanjita11.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Sanjita Dura cultural dress" />
+            <img
+              src="photos/sanjita11.png"
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+              alt="Sanjita Dura"
+            />
           </div>
-
           <div class="overflow-hidden bg-zinc-900 aspect-[3/4] -mt-4 md:mt-0">
-            <img src="photos/sanjita21.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Sanjita Dura studio" />
+            <img
+              src="photos/sanjita21.png"
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+              alt="Sanjita Dura"
+            />
           </div>
-
           <div class="overflow-hidden bg-zinc-900 aspect-[3/4] md:mt-12">
-            <img src="photos/liveshow2 (2).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Sanjita Dura Live Show" />
+            <img
+              src="photos/liveshow2 (2).jpg"
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+              alt="Sanjita Dura"
+            />
           </div>
-
         </div>
       </section>
 
       <!-- VIDEO SECTION -->
-      <section id="videos" class="py-16 lg:py-24 px-6 md:px-16 lg:px-20 bg-zinc-950">
+      <section
+        id="videos"
+        class="py-16 lg:py-24 px-6 md:px-16 lg:px-20 bg-zinc-950"
+      >
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-xl md:text-2xl tracking-[0.5em] uppercase mb-12 text-center lg:text-left text-zinc-400">Latest Videos</h2>
-          
+          <h2
+            class="text-xl md:text-2xl tracking-[0.5em] uppercase mb-12 text-center lg:text-left text-zinc-400"
+          >
+            Latest Videos
+          </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-            <!-- Video 1 -->
             <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
-              <iframe class="w-full h-full" src="https://www.youtube.com/embed/XIILoDsR4yU" frameborder="0" allowfullscreen></iframe>
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/XIILoDsR4yU"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
             </div>
-            <!-- Video 2 -->
             <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
-              <iframe class="w-full h-full" src="https://www.youtube.com/embed/K52lhnKlnx4" frameborder="0" allowfullscreen></iframe>
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/K52lhnKlnx4"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
             </div>
-            <!-- Video 3 -->
             <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
-              <iframe class="w-full h-full" src="https://www.youtube.com/embed/ks47ogZukoM" frameborder="0" allowfullscreen></iframe>
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/ks47ogZukoM"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
             </div>
-            <!-- Video 4 -->
             <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
-              <iframe class="w-full h-full" src="https://www.youtube.com/embed/4hyj6HHDSTQ" frameborder="0" allowfullscreen></iframe>
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/ZE_R7gbspjo"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
             </div>
-            <!-- Video 5 -->
-            <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZE_R7gbspjo?si=3uhZWJElgzVPEqR-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- PODCASTS & INTERVIEWS SECTION -->
+      <section
+        id="podcasts"
+        class="py-16 lg:py-24 px-6 md:px-16 lg:px-20 bg-black"
+      >
+        <div class="max-w-5xl mx-auto">
+          <h2
+            class="text-xl md:text-2xl tracking-[0.5em] uppercase mb-12 text-center lg:text-left text-zinc-400"
+          >
+            Podcasts & Interviews
+          </h2>
+
+          <div class="space-y-12">
+            <!-- Podcast Item 1 -->
+            <div
+              class="flex flex-col md:flex-row bg-zinc-900/30 border border-zinc-800 p-6 gap-8 items-center"
+            >
+              <div class="w-full md:w-2/5 aspect-video overflow-hidden shadow-xl">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/MO7UrVRUknc"
+                  title="Awaaz Podcast"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="w-full md:w-3/5">
+                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold"
+                  >Podcast • Nov 14, 2025</span
+                >
+                <h3 class="text-xl font-semibold mt-2 text-zinc-200">
+                  Awaaz Podcast hosted by 🎤 Tulsingh Ranpachhai
+                </h3>
+                <p class="text-gray-400 mt-3 text-sm leading-relaxed font-light">
+                  The Voice of Nepal बाट भाईरल भएकी सन्जिता दुरा-पहिलोपटक
+                  मिडियमा | Awaaz Podcast with Tulsingh Ep-4
+                </p>
+                <a
+                  href="https://youtu.be/MO7UrVRUknc"
+                  target="_blank"
+                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-white transition-colors"
+                >
+                  Watch Full Podcast
+                </a>
+              </div>
+            </div>
+
+            <!-- Podcast Item 2 -->
+            <div
+              class="flex flex-col md:flex-row bg-zinc-900/30 border border-zinc-800 p-6 gap-8 items-center"
+            >
+              <div class="w-full md:w-2/5 aspect-video overflow-hidden shadow-xl">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/BwS0AFO5dGo"
+                  title="Janaswal Interview"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="w-full md:w-3/5">
+                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold"
+                  >Interview • March 13, 2026</span
+                >
+                <h3 class="text-xl font-semibold mt-2 text-zinc-200">
+                  Janaswal | Indigenous Television
+                </h3>
+                <p class="text-gray-400 mt-3 text-sm leading-relaxed font-light">
+                  भ्वाइस अफ नेपाल सिजन ७ की उपविजेता सन्जिता दुराको पहिचान
+                  सम्बन्धी मन छुने कुराहरु | Janaswal
+                </p>
+                <a
+                  href="https://youtu.be/BwS0AFO5dGo"
+                  target="_blank"
+                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-white transition-colors"
+                >
+                  Watch Full Interview
+                </a>
+              </div>
+            </div>
+
+            <!-- Podcast Item 3 -->
+            <div
+              class="flex flex-col md:flex-row bg-zinc-900/30 border border-zinc-800 p-6 gap-8 items-center"
+            >
+              <div class="w-full md:w-2/5 aspect-video overflow-hidden shadow-xl">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/M3d6xecZvpk"
+                  title="Fresh Khabar Interview"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="w-full md:w-3/5">
+                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold"
+                  >Interview • April 26, 2026</span
+                >
+                <h3 class="text-xl font-semibold mt-2 text-zinc-200">
+                  Fresh Khabar
+                </h3>
+                <p class="text-gray-400 mt-3 text-sm leading-relaxed font-light">
+                  Voice Of Nepal कि Sanjita Dura पढेर डाक्टर बन्ने सपना | दुरा
+                  समुदायलाई चिनाउन चाहन्छिन Interview
+                </p>
+                <a
+                  href="https://youtu.be/M3d6xecZvpk"
+                  target="_blank"
+                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-white transition-colors"
+                >
+                  Watch Full Interview
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- FOOTER -->
-      <footer class="p-12 pb-28 lg:pb-12 text-[10px] md:text-xs text-zinc-600 tracking-[0.3em] text-center border-t border-zinc-900 bg-black">
+      <footer
+        class="p-12 pb-28 lg:pb-12 text-[10px] md:text-xs text-zinc-600 tracking-[0.3em] text-center border-t border-zinc-900 bg-black"
+      >
         © 2026 SANJITA DURA | PROUD TO BE DURA
       </footer>
-
     </main>
-
   </body>
 </html>
