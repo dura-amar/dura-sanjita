@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sanjitadura.com.np/" />
+    <meta property="og:title" content="Sanjita Dura | Artist Portfolio" />
+    <meta
+      property="og:description"
+      content="Finalist of The Voice of Nepal Season 7. Rooted in culture, singing with honesty."
+    />
+    <meta property="og:image" content="photos/sanjita7.png" />
     <title>Sanjita Dura | Artist Portfolio</title>
 
     <!-- Tailwind & FontAwesome -->
@@ -20,40 +29,117 @@
       body {
         font-family: "Poppins", sans-serif;
         scroll-behavior: smooth;
-        background-color: black;
+        /* Vibrant Mesh Gradient Background */
+        background-color: #000000;
+        background-image:
+          radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+          radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+          radial-gradient(
+            at 100% 0%,
+            hsla(339, 49%, 30%, 1) 0,
+            transparent 50%
+          ),
+          radial-gradient(at 0% 100%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+          radial-gradient(
+            at 50% 100%,
+            hsla(225, 39%, 30%, 1) 0,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            hsla(339, 49%, 30%, 1) 0,
+            transparent 50%
+          );
+        background-attachment: fixed;
         color: white;
+        margin: 0;
       }
+
       .signature {
         font-family: "Great Vibes", cursive;
       }
+
       ::-webkit-scrollbar {
         width: 5px;
       }
       ::-webkit-scrollbar-track {
-        background: #000;
+        background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #333;
+        background: rgba(255, 255, 255, 0.2);
         border-radius: 10px;
       }
+
       .fade-in {
         animation: fadeIn 1.5s ease-in;
       }
+
       @keyframes fadeIn {
         from {
           opacity: 0;
+          transform: translateY(10px);
         }
         to {
           opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .voice-badge-glow {
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
+        animation: pulse-red 3s infinite;
+      }
+
+      @keyframes pulse-red {
+        0% {
+          box-shadow: 0 0 0px rgba(239, 68, 68, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+        }
+        100% {
+          box-shadow: 0 0 0px rgba(239, 68, 68, 0.2);
+        }
+      }
+
+      .custom-cursor {
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transition:
+          transform 0.1s ease,
+          background 0.3s ease;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Hide default cursor on desktop */
+      @media (min-width: 1024px) {
+        body {
+          cursor: none;
+        }
+        a,
+        button {
+          cursor: none;
         }
       }
     </style>
   </head>
 
-  <body class="bg-black">
+  <body>
     <!-- VERTICAL SOCIAL SIDEBAR -->
     <aside
-      class="fixed bottom-0 left-0 w-full h-16 lg:h-full lg:w-20 flex lg:flex-col justify-center items-center z-50 bg-black/90 backdrop-blur-md border-t lg:border-t-0 lg:border-r border-zinc-800"
+      class="fixed bottom-0 left-0 w-full h-16 lg:h-full lg:w-20 flex lg:flex-col justify-center items-center z-50 bg-black/40 backdrop-blur-xl border-t lg:border-t-0 lg:border-r border-white/10"
     >
       <div
         class="flex lg:flex-col gap-8 md:gap-10 text-xl text-gray-400 lg:mb-24"
@@ -96,7 +182,7 @@
       <section class="flex flex-col lg:flex-row min-h-screen">
         <!-- LEFT: INTRO TEXT -->
         <div
-          class="w-full lg:w-1/2 h-auto lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center p-8 md:p-16 lg:p-20 z-10 bg-black"
+          class="w-full lg:w-1/2 h-auto lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center p-8 md:p-16 lg:p-20 z-10 bg-transparent"
         >
           <div class="fade-in">
             <h1 class="leading-none">
@@ -108,30 +194,50 @@
                 >DURA</span
               >
             </h1>
+
+            <!-- VOICE OF NEPAL BADGE -->
+            <div
+              class="mt-6 inline-block voice-badge-glow bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full"
+            >
+              <p
+                class="text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold text-gray-100"
+              >
+                <i class="fa-solid fa-microphone-lines mr-2 text-red-500"></i>
+                Finalist | The Voice of Nepal S7
+              </p>
+            </div>
+
             <p
-              class="text-gray-400 mt-6 max-w-md italic border-l-2 border-zinc-700 pl-4 text-sm md:text-base"
+              class="text-gray-300 mt-8 max-w-md italic border-l-2 border-red-500/50 pl-4 text-sm md:text-base leading-relaxed"
             >
               Singing with honesty, rooted in culture. Exploring the depths of
               folk and contemporary melodies.
             </p>
+
             <nav
-              class="mt-8 lg:mt-12 flex flex-col gap-4 text-xs md:text-sm tracking-widest uppercase font-semibold"
+              class="mt-10 lg:mt-14 flex flex-col gap-4 text-xs md:text-sm tracking-widest uppercase font-semibold"
             >
               <a
                 href="#gallery"
-                class="text-zinc-500 hover:text-white transition"
-                >01. Gallery</a
+                class="text-zinc-400 hover:text-white transition flex items-center gap-2"
+                ><span>01.</span> Gallery</a
               >
               <a
                 href="#videos"
-                class="text-zinc-500 hover:text-white transition"
-                >02. Videos</a
+                class="text-zinc-400 hover:text-white transition flex items-center gap-2"
+                ><span>02.</span> Videos</a
               >
               <a
                 href="#podcasts"
-                class="text-zinc-500 hover:text-white transition"
-                >03. Podcasts & Interviews</a
+                class="text-zinc-400 hover:text-white transition flex items-center gap-2"
+                ><span>03.</span> Podcasts & Interviews</a
               >
+              <a
+                href="#testimonials"
+                class="text-zinc-400 hover:text-white transition flex items-center gap-2"
+                ><span>03.</span> Testimonials</a
+              >
+              
             </nav>
           </div>
         </div>
@@ -139,52 +245,57 @@
         <!-- RIGHT: SCROLLING GALLERY -->
         <div
           id="gallery"
-          class="w-full lg:w-1/2 p-2 md:p-8 grid grid-cols-2 gap-2 md:gap-4 lg:gap-6 bg-zinc-950/30"
+          class="w-full lg:w-1/2 p-4 md:p-8 grid grid-cols-2 gap-4 lg:gap-6 bg-white/5 backdrop-blur-sm"
         >
-          <div class="overflow-hidden bg-zinc-900 aspect-[3/4]">
+          <div class="overflow-hidden bg-zinc-900 aspect-[3/4] rounded-sm">
             <img
               src="photos/sanjita7.png"
               class="w-full h-full object-cover hover:scale-105 transition duration-700"
-              alt="Sanjita Dura"
+              alt="Sanjita Dura Voice of Nepal Finalist"
             />
           </div>
-          <div class="overflow-hidden bg-zinc-900 aspect-[3/4] mt-4 md:mt-12">
+          <div
+            class="overflow-hidden bg-zinc-900 aspect-[3/4] rounded-sm lg:mt-16"
+          >
             <img
               src="photos/sanjita11.png"
               class="w-full h-full object-cover hover:scale-105 transition duration-700"
-              alt="Sanjita Dura"
+              alt="Sanjita Dura Folk Singer"
             />
           </div>
-          <div class="overflow-hidden bg-zinc-900 aspect-[3/4] -mt-4 md:mt-0">
+          <div
+            class="overflow-hidden bg-zinc-900 aspect-[3/4] rounded-sm lg:-mt-8"
+          >
             <img
               src="photos/sanjita21.png"
               class="w-full h-full object-cover hover:scale-105 transition duration-700"
-              alt="Sanjita Dura"
+              alt="Sanjita Dura Artist Portfolio"
             />
           </div>
-          <div class="overflow-hidden bg-zinc-900 aspect-[3/4] md:mt-12">
+          <div
+            class="overflow-hidden bg-zinc-900 aspect-[3/4] rounded-sm lg:mt-12"
+          >
             <img
               src="photos/liveshow2 (2).jpg"
               class="w-full h-full object-cover hover:scale-105 transition duration-700"
-              alt="Sanjita Dura"
+              alt="Sanjita Dura Live Performance"
             />
           </div>
         </div>
       </section>
 
       <!-- VIDEO SECTION -->
-      <section
-        id="videos"
-        class="py-16 lg:py-24 px-6 md:px-16 lg:px-20 bg-zinc-950"
-      >
-        <div class="max-w-5xl mx-auto">
+      <section id="videos" class="py-20 lg:py-32 px-6 md:px-16 lg:px-20">
+        <div class="max-w-6xl mx-auto">
           <h2
-            class="text-xl md:text-2xl tracking-[0.5em] uppercase mb-12 text-center lg:text-left text-zinc-400"
+            class="text-xl md:text-2xl tracking-[0.5em] uppercase mb-16 text-center lg:text-left text-white/70"
           >
-            Latest Videos
+            Videos
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-            <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <div
+              class="aspect-video w-full glass shadow-2xl overflow-hidden rounded-lg"
+            >
               <iframe
                 class="w-full h-full"
                 src="https://www.youtube.com/embed/XIILoDsR4yU"
@@ -192,26 +303,12 @@
                 allowfullscreen
               ></iframe>
             </div>
-            <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
+            <div
+              class="aspect-video w-full glass shadow-2xl overflow-hidden rounded-lg"
+            >
               <iframe
                 class="w-full h-full"
                 src="https://www.youtube.com/embed/K52lhnKlnx4"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/ks47ogZukoM"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="aspect-video w-full bg-zinc-900 shadow-2xl">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/ZE_R7gbspjo"
                 frameborder="0"
                 allowfullscreen
               ></iframe>
@@ -220,47 +317,53 @@
         </div>
       </section>
 
-    <!-- PODCASTS & INTERVIEWS SECTION -->
+      <!-- PODCASTS & INTERVIEWS SECTION -->
       <section
         id="podcasts"
-        class="py-16 lg:py-24 px-6 md:px-16 lg:px-20 bg-black"
+        class="py-20 lg:py-32 px-6 md:px-16 lg:px-20 bg-black/20"
       >
         <div class="max-w-5xl mx-auto">
           <h2
-            class="text-xl md:text-2xl tracking-[0.5em] uppercase mb-12 text-center lg:text-left text-zinc-400"
+            class="text-xl md:text-2xl tracking-[0.5em] uppercase mb-16 text-center lg:text-left text-white/70"
           >
             Podcasts & Interviews
           </h2>
 
-          <div class="space-y-12">
+          <div class="space-y-10">
             <!-- Podcast Item 1 -->
             <div
-              class="flex flex-col md:flex-row bg-zinc-900/30 border border-zinc-800 p-6 gap-8 items-center"
+              class="flex flex-col md:flex-row glass p-6 gap-8 items-center rounded-xl hover:bg-white/10 transition duration-500"
             >
-              <div class="w-full md:w-2/5 aspect-video overflow-hidden shadow-xl">
+              <div
+                class="w-full md:w-2/5 aspect-video overflow-hidden shadow-2xl rounded-lg"
+              >
                 <iframe
                   class="w-full h-full"
                   src="https://www.youtube.com/embed/MO7UrVRUknc"
-                  title="Awaaz Podcast"
+                  title="Awaaz Podcast with Sanjita Dura"
                   frameborder="0"
                   allowfullscreen
                 ></iframe>
               </div>
               <div class="w-full md:w-3/5">
-                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold"
-                  >Podcast • Nov 14, 2025</span
+                <span
+                  class="text-[10px] text-red-400 uppercase tracking-widest font-semibold"
+                  >Featured Podcast</span
                 >
-                <h3 class="text-xl font-semibold mt-2 text-zinc-200">
-                  Awaaz Podcast hosted by 🎤 Tulsingh Ranpachhai
+                <h3 class="text-xl font-semibold mt-2 text-white">
+                  Awaaz Podcast hosted by Tulsingh Ranpachhai
                 </h3>
-                <p class="text-gray-400 mt-3 text-sm leading-relaxed font-light">
-                  The Voice of Nepal बाट भाईरल भएकी सन्जिता दुरा-पहिलोपटक
-                  मिडियमा | Awaaz Podcast with Tulsingh Ep-4
+                <p
+                  class="text-gray-400 mt-3 text-sm leading-relaxed font-light"
+                >
+                  A deep dive into her viral moments and her artistic evolution
+                  after becoming a household name through the nation's biggest
+                  stage.
                 </p>
                 <a
                   href="https://youtu.be/MO7UrVRUknc"
                   target="_blank"
-                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-white transition-colors"
+                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-red-500 transition-all"
                 >
                   Watch Full Podcast
                 </a>
@@ -269,32 +372,38 @@
 
             <!-- Podcast Item 2 -->
             <div
-              class="flex flex-col md:flex-row bg-zinc-900/30 border border-zinc-800 p-6 gap-8 items-center"
+              class="flex flex-col md:flex-row glass p-6 gap-8 items-center rounded-xl hover:bg-white/10 transition duration-500"
             >
-              <div class="w-full md:w-2/5 aspect-video overflow-hidden shadow-xl">
+              <div
+                class="w-full md:w-2/5 aspect-video overflow-hidden shadow-2xl rounded-lg"
+              >
                 <iframe
                   class="w-full h-full"
                   src="https://www.youtube.com/embed/BwS0AFO5dGo"
-                  title="Janaswal Interview"
+                  title="Janaswal Interview with Voice Finalist"
                   frameborder="0"
                   allowfullscreen
                 ></iframe>
               </div>
               <div class="w-full md:w-3/5">
-                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold"
-                  >Interview • March 13, 2026</span
+                <span
+                  class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold"
+                  >Indigenous TV Interview</span
                 >
-                <h3 class="text-xl font-semibold mt-2 text-zinc-200">
-                  Janaswal | Indigenous Television
+                <h3 class="text-xl font-semibold mt-2 text-white">
+                  Janaswal | Identity and Music
                 </h3>
-                <p class="text-gray-400 mt-3 text-sm leading-relaxed font-light">
-                  भ्वाइस अफ नेपाल सिजन ७ की उपविजेता सन्जिता दुराको पहिचान
-                  सम्बन्धी मन छुने कुराहरु | Janaswal
+                <p
+                  class="text-gray-400 mt-3 text-sm leading-relaxed font-light"
+                >
+                  Voice Of Nepal Season 7 Finalist Sanjita Dura discusses
+                  cultural identity and the importance of representing the Dura
+                  community.
                 </p>
                 <a
                   href="https://youtu.be/BwS0AFO5dGo"
                   target="_blank"
-                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-white transition-colors"
+                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-red-500 transition-all"
                 >
                   Watch Full Interview
                 </a>
@@ -303,9 +412,11 @@
 
             <!-- Podcast Item 3 -->
             <div
-              class="flex flex-col md:flex-row bg-zinc-900/30 border border-zinc-800 p-6 gap-8 items-center"
+              class="flex flex-col md:flex-row glass p-6 gap-8 items-center rounded-xl hover:bg-white/10 transition duration-500"
             >
-              <div class="w-full md:w-2/5 aspect-video overflow-hidden shadow-xl">
+              <div
+                class="w-full md:w-2/5 aspect-video overflow-hidden shadow-2xl rounded-lg"
+              >
                 <iframe
                   class="w-full h-full"
                   src="https://www.youtube.com/embed/M3d6xecZvpk"
@@ -315,20 +426,23 @@
                 ></iframe>
               </div>
               <div class="w-full md:w-3/5">
-                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold"
-                  >Interview • April 26, 2026</span
+                <span
+                  class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold"
+                  >Fresh Khabar Feature</span
                 >
-                <h3 class="text-xl font-semibold mt-2 text-zinc-200">
-                  Fresh Khabar
+                <h3 class="text-xl font-semibold mt-2 text-white">
+                  Life Beyond the Stage
                 </h3>
-                <p class="text-gray-400 mt-3 text-sm leading-relaxed font-light">
-                  Voice Of Nepal कि Sanjita Dura पढेर डाक्टर बन्ने सपना | दुरा
-                  समुदायलाई चिनाउन चाहन्छिन Interview
+                <p
+                  class="text-gray-400 mt-3 text-sm leading-relaxed font-light"
+                >
+                  Reflecting on her dreams, from academic aspirations to
+                  becoming a prominent voice in the Nepali music industry.
                 </p>
                 <a
                   href="https://youtu.be/M3d6xecZvpk"
                   target="_blank"
-                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-white transition-colors"
+                  class="inline-block mt-6 text-xs font-bold uppercase tracking-widest border-b border-zinc-700 pb-1 hover:text-white hover:border-red-500 transition-all"
                 >
                   Watch Full Interview
                 </a>
@@ -338,12 +452,94 @@
         </div>
       </section>
 
+      <!-- TESTIMONIALS SECTION -->
+      <section
+        id="testimonials"
+        class="py-20 lg:py-32 px-6 md:px-16 lg:px-20 border-t border-white/5"
+      >
+        <div class="max-w-4xl mx-auto text-center">
+          <h2
+            class="text-xl md:text-2xl tracking-[0.5em] uppercase mb-16 text-white/70"
+          >
+            Voices of Support
+          </h2>
+
+          <div
+            id="quote-container"
+            class="grid grid-cols-1 md:grid-cols-2 gap-12"
+          >
+            <!-- JavaScript will inject testimonials here -->
+          </div>
+        </div>
+      </section>
+
       <!-- FOOTER -->
       <footer
-        class="p-12 pb-28 lg:pb-12 text-[10px] md:text-xs text-zinc-600 tracking-[0.3em] text-center border-t border-zinc-900 bg-black"
+        class="p-16 pb-32 lg:pb-16 text-[10px] md:text-xs text-zinc-500 tracking-[0.4em] text-center border-t border-white/5 bg-black/40"
       >
-        © 2026 SANJITA DURA | PROUD TO BE DURA
+        © 2026 SANJITA DURA | FINALIST, THE VOICE OF NEPAL S7
       </footer>
+
+      <script>
+        const cursor = document.createElement("div");
+        cursor.classList.add("custom-cursor");
+        document.body.appendChild(cursor);
+
+        document.addEventListener("mousemove", (e) => {
+          cursor.style.left = e.clientX + "px";
+          cursor.style.top = e.clientY + "px";
+        });
+
+        // Expansion effect on links
+        document.querySelectorAll("a, button, iframe").forEach((link) => {
+          link.addEventListener(
+            "mouseenter",
+            () => (cursor.style.transform = "translate(-50%, -50%) scale(2.5)"),
+          );
+          link.addEventListener(
+            "mouseleave",
+            () => (cursor.style.transform = "translate(-50%, -50%) scale(1)"),
+          );
+        });
+
+        // --- TESTIMONIAL DATA ---
+        const quoteData = [
+          {
+            text: "Her voice isn't just singing; it's a bridge between our ancestors and the modern world.",
+            author: "Cultural Critic",
+            context: "The Voice of Nepal Review",
+          },
+          {
+            text: "One of the most authentic folk voices to emerge in this decade, carrying the weight of tradition with grace.",
+            author: "Industry Mentor",
+            context: "Season 7 Performance",
+          },
+        ];
+
+        // --- RENDER TESTIMONIALS ---
+        const quoteContainer = document.getElementById("quote-container");
+
+        quoteData.forEach((q) => {
+          quoteContainer.innerHTML += `
+    <div class="glass p-8 rounded-2xl relative group hover:bg-white/5 transition-all duration-500">
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/40">
+        <i class="fa-solid fa-quote-left text-[10px] text-white"></i>
+      </div>
+      <p class="text-gray-300 italic text-lg leading-relaxed font-light">
+        "${q.text}"
+      </p>
+      <div class="mt-6 pt-6 border-t border-white/10">
+        <h4 class="text-white font-semibold tracking-widest uppercase text-xs">${q.author}</h4>
+        <p class="text-red-400 text-[10px] uppercase tracking-tighter mt-1">${q.context}</p>
+      </div>
+    </div>
+  `;
+        });
+
+        // Since we are injecting new HTML, we need to refresh the cursor listener
+        // for these new elements if they have links, but since these are static text,
+        // the cursor will behave normally.
+      </script>
     </main>
   </body>
 </html>
